@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>1장</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{background-color: grey;}
+        img{
+            width: 30%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        /* p{border: solid;} */
+        .border{border: solid pink 1px;border-radius: 8px;}
+        .font{font : italic bold 28px/3 "궁서";}
+        .align{text-align: center;}
+        .deco{text-decoration:overline dotted;}
+        .indent{text-indent: 50px;}
+        .clamp{font-size: clamp(1rem, 6vw, 4rem);}
+    </style>
+</head>
+
+<body>
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>HTML</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>HTML의 기초 개념 정리</h2>
+
+        <h3>1. 텍스트 태그</h3>
+        <p>&lt;strong&gt; → <strong>굵은 글자</strong></p>
+        <p>&lt;em&gt; → <em>기울임</em></p>
+        <p>&lt;del&gt; → <del>취소선</del></p>
+        <p>&lt;small&gt; → <small>작은 글자</small></p>
+        <p>&lt;sub&gt; / &lt;sup&gt; → 기본 <sub>아래표기</sub> 및 <sup>위표기</sup></p>
+
+        <h3>2. 링크 & 이미지</h3>
+        <p>&lt;a href=&quot;#&quot;&gt; → <a href="https://www.naver.com/">하이퍼링크(naver) 예시</a></p>
+        <p>
+            &lt;img src=&quot;이미지URL&quot;&gt; → 
+            <img src="https://picsum.photos/200/120" alt="이미지 예시">
+        </p>
+
+        <h3>3. 리스트(List)</h3>
+        <p>&lt;ul&gt; &lt;li&gt; → 순서 없는 리스트 예시</p>
+        <ul>
+            <li>unordered item 1</li>
+            <li>unordered item 2</li>
+        </ul>
+
+        <p>&lt;ol&gt; &lt;li&gt; → 순서 있는 리스트 예시</p>
+        <ol>
+            <li>ordered item 1</li>
+            <li>ordered item 2</li>
+        </ol>
+
+        <h3>4. CSS 관련 기초</h3>
+        <p>&lt;p style=&quot;border: 2px solid black;&quot;&gt; → 
+            <span style="border: 2px solid black; padding: 2px;">border 예시</span>
+        </p>
+
+        <p>
+            &lt;p style=&quot;font-size: 24px; font-weight: bold;&quot;&gt; →
+            <br>
+            <span style="font-size: 24px; font-weight: bold;">큰 글씨 예시</span>
+        </p>
+
+
+        <p>&lt;p style=&quot;text-align: center;&quot;&gt; → 
+            <span style="display:block; text-align:center;">가운데 정렬 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;text-decoration: underline;&quot;&gt; → 
+            <span style="text-decoration: underline;">밑줄 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;text-indent: 20px;&quot;&gt; → 
+            <span style="display:block; text-indent: 20px;">들여쓰기 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;font-size: clamp(14px, 4vw, 24px);&quot;&gt; → 
+            <span style="font-size: clamp(14px, 4vw, 24px);">clamp 예시<br>
+                (화면 크기에 따라 달라지는 설정)</span>
+        </p>
+    </div>
+
+
+
+</div>
+<script>
+    function openNav(){ document.getElementById("sidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("sidebar").style.width = "0"; }
+
+    // sidebar.html 파일 불러오기
+    fetch("sidebar.html")
+        .then(r => r.text())
+        .then(html => {
+            document.getElementById("sidebar").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>

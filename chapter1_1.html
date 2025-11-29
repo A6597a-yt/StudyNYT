@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>1장 - HTML 기초 태그</title>
+    <style>
+        /* ===============================
+        chapter1_1 전용 반응형 최적화
+        =============================== */
+
+        /* 콘텐츠 기본 */
+        .content h2 {
+            font-size: clamp(20px, 5vw, 28px);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .content p {
+            line-height: 1.55;
+            font-size: clamp(14px, 3.8vw, 17px);
+            margin: 8px 0;
+        }
+
+        /* 태그 예시 줄맞춤 */
+        .content p span {
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* 콘텐츠 영역 패딩 강화 (모바일 터치 고려) */
+        .content {
+            padding: 16px 18px;
+        }
+
+        /* 이미지 반응형 */
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 6px 0 12px;
+        }
+
+        /* 목록 스타일 최적화 */
+        .content ul,
+        .content ol {
+            padding-left: 22px;
+            margin: 10px 0;
+        }
+
+        .content li {
+            font-size: clamp(14px, 3.7vw, 17px);
+            margin-bottom: 4px;
+        }
+
+        /* page-wrapper 크기 (모바일 기준) */
+        .page-wrapper {
+            max-width: 430px;  /* 스마트폰 세로 기준 */
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        }
+
+        /* topbar 고정 시 레이아웃 깨짐 방지 */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        /* 메뉴 버튼 터치 영역 확대 */
+        .menu-btn {
+            padding: 10px 14px;
+            font-size: 22px;
+        }
+
+        /* 전체 가독성 향상 */
+        body {
+            background: #e5e5e5;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>1장 HTML 기본 태그</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>1장 — HTML 기초 태그</h2>
+
+        <p>&lt;strong&gt; → <strong>굵은 글자</strong></p>
+        <p>&lt;em&gt; → <em>기울임</em></p>
+        <p>&lt;del&gt; → <del>취소선</del></p>
+        <p>&lt;small&gt; → <small>작은 글자</small></p>
+        <p>&lt;sub&gt; / &lt;sup&gt; → 기본 <sub>아래표기</sub> 및 <sup>위표기</sup></p>
+
+        <p>&lt;a href&gt; → <a href="#">하이퍼링크 예시</a></p>
+
+        <p>&lt;img&gt; → <img src="https://picsum.photos/200/120" alt=""></p>
+
+        <p>&lt;ul&gt;, &lt;li&gt;</p>
+        <ul>
+            <li>항목 1</li>
+            <li>항목 2</li>
+        </ul>
+
+        <p>&lt;ol&gt;, &lt;li&gt;</p>
+        <ol>
+            <li>항목 1</li>
+            <li>항목 2</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    function openNav(){ document.getElementById("sidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("sidebar").style.width = "0"; }
+    fetch("sidebar.html").then(res=>res.text()).then(html=>{
+        document.getElementById("sidebar").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>

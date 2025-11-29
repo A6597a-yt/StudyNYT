@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>2장 - CSS 문법</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>2장 CSS 기초</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>2장 — CSS 기본 문법</h2>
+
+        <p>&lt;p style=&quot;border: 1px solid;&quot;&gt; → 
+            <span style="display:block; border:1px solid;">border 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;font-size: 18px; font-weight: bold;&quot;&gt; →
+            <span style="display:block; font-size:18px; font-weight:bold;">폰트 관련 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;text-align:center;&quot;&gt; →
+            <span style="display:block; text-align:center;">가운데 정렬</span>
+        </p>
+
+        <p>&lt;p style=&quot;text-decoration: underline;&quot;&gt; →
+            <span style="display:block; text-decoration: underline;">밑줄 스타일</span>
+        </p>
+
+        <p>&lt;p style=&quot;text-indent: 20px;&quot;&gt; →
+            <span style="display:block; text-indent:20px;">들여쓰기 예시</span>
+        </p>
+
+        <p>&lt;p style=&quot;font-size: clamp(14px, 4vw, 24px);&quot;&gt; →
+            <span style="display:block; font-size: clamp(14px, 4vw, 24px);">
+                clamp 반응형 글씨
+            </span>
+        </p>
+
+        <p>overflow-y: auto 예시</p>
+        <div style="border:1px solid; height:80px; overflow-y:auto;">
+            내용이 많을 때 스크롤  
+            내용이 많을 때 스크롤  
+            내용이 많을 때 스크롤  
+        </div>
+    </div>
+</div>
+
+<script>
+fetch("sidebar.html").then(res=>res.text()).then(html=>{
+    document.getElementById("sidebar").innerHTML = html;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>4장 - flex-direction & wrap</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>4장 flex-direction & wrap</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>4장 — Flexbox 방향 & 줄바꿈</h2>
+
+        <h3>flex-direction</h3>
+        <p>row / row-reverse / column / column-reverse</p>
+
+        <h3>flex-wrap</h3>
+        <p>nowrap / wrap / wrap-reverse</p>
+
+        <!-- 네가 만든 flex 예제 전체 붙여도 됨 -->
+    </div>
+</div>
+
+<script>
+fetch("sidebar.html").then(res=>res.text()).then(html=>{
+    document.getElementById("sidebar").innerHTML = html;
+});
+</script>
+
+</body>
+</html>

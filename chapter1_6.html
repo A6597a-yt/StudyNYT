@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>6장 - Flex grow/shrink/self</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>6장 Flex grow/shrink</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>6장 — grow, shrink, self</h2>
+
+        <p>flex-grow: 여유 공간 배분</p>
+        <p>flex-shrink: 축소 비율</p>
+        <p>align-self: 자식별 위치 조절</p>
+
+        <!-- 네가 만든 grow/shrink/self 예제 추가 -->
+    </div>
+</div>
+
+<script>
+fetch("sidebar.html").then(res=>res.text()).then(html=>{
+    document.getElementById("sidebar").innerHTML = html;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Study Notes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>Study Notes</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+
+
+    <div class="content">
+        <h1>나의 공부 내용을 저장한 페이지</h1>
+        <h1>MAIdN</h1>
+        <p>이 웹페이지는 내가 지금까지 공부해온 모든 내용을 정리하기 위해 만든 기록용 공간이다.</p>
+        <p>왼쪽 위 메뉴를 클릭하면 각 장(1~5장)으로 이동할 수 있다.</p>
+        <p>앞으로 Java, Python, SQL, 자료구조·알고리즘, 프로젝트 기록 등 모든 학습 결과를 이곳에 구조적으로 저장할 것이다.</p>
+    </div>
+
+</div>
+
+<script>
+    function openNav(){ document.getElementById("sidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("sidebar").style.width = "0"; }
+
+    // sidebar.html 파일 불러오기
+    fetch("sidebar.html")
+    .then(r => r.text())
+    .then(html => {
+        document.getElementById("sidebar").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>

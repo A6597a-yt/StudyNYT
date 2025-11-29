@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>7장 - CSS pseudo-class</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>7장 CSS 의사 클래스</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>7장 — CSS 의사 클래스</h2>
+
+        <p>a:link / a:hover / a:visited / a:active</p>
+        <p>input:focus</p>
+        <p>input:disabled</p>
+        <p>input:checked + label</p>
+
+        <!-- 너가 만든 pseudo 예제 넣으면 됨 -->
+    </div>
+</div>
+
+<script>
+    function openNav(){ document.getElementById("sidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("sidebar").style.width = "0"; }
+fetch("sidebar.html").then(res=>res.text()).then(html=>{
+    document.getElementById("sidebar").innerHTML = html;
+});
+</script>
+
+</body>
+</html>

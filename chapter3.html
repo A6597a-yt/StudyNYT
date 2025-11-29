@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1장</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <span class="menu-btn" onclick="openNav()">☰</span>
+    <span>1장</span>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" onclick="closeNav()">닫기 ✕</a>
+    <a href="index.html">메인</a>
+    <a href="chapter1.html">1장</a>
+    <a href="chapter2.html">2장</a>
+    <a href="chapter3.html">3장</a>
+    <a href="chapter4.html">4장</a>
+    <a href="chapter5.html">5장</a>
+</div>
+
+<div class="content">
+    <h2>1장 — 기초 개념 정리</h2>
+    <p>임시 내용: 기본 문법, 자료형, 조건문, 반복문 등을 정리할 공간.</p>
+</div>
+
+<script>
+    function openNav(){ document.getElementById("sidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("sidebar").style.width = "0"; }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>3장 - display & position</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+        <span>3장 display / position</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>3장 — display / position</h2>
+
+        <h3>display</h3>
+        <div class="box" style="display:block; border:1px solid;">block</div>
+        <span class="box" style="display:inline; border:1px solid;">inline</span>
+        <div class="box" style="display:inline-block; border:1px solid; width:100px;">inline-block</div>
+
+        <h3>position</h3>
+        <p>&lt;div style=&quot;position:fixed&quot;&gt; → 고정 배치</p>
+        <p>&lt;div style=&quot;position:sticky&quot;&gt; → 스크롤 따라옴</p>
+
+        <h3>flex 중앙정렬 치트키</h3>
+        <div style="border:1px solid; display:flex; justify-content:center; align-items:center; height:100px;">
+            중앙 배치
+        </div>
+    </div>
+</div>
+
+<script>
+fetch("sidebar.html").then(res=>res.text()).then(html=>{
+    document.getElementById("sidebar").innerHTML = html;
+});
+</script>
+
+</body>
+</html>
