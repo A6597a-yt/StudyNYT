@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="display_position.css">
     <title>4장 - flex-direction & wrap</title>
 </head>
 <body>
@@ -22,8 +23,69 @@
         <h3>flex-direction</h3>
         <p>row / row-reverse / column / column-reverse</p>
 
-        <h3>flex-wrap</h3>
-        <p>nowrap / wrap / wrap-reverse</p>
+        <div class="flex-dir">
+            <h1>row</h1>
+            <section class="row">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+            </section>
+
+            <h1>row-reverse</h1>
+            <section class="rowReverse">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+            </section>
+
+            <h1>column</h1>
+            <section class="column">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+            </section>
+
+            <h1>column-reverse</h1>
+            <section class="columnReverse">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+            </section>
+        </div>
+    <!-- flex-wrap 코드 =============================== -->
+        <div class="flex-wrap">
+            <h3>flex-wrap</h3>
+            <p>nowrap / wrap / wrap-reverse</p>
+            <h1>nowrap</h1>
+            <section class="nowrap">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+                <div class="box red">04</div>
+                <div class="box brown">05</div>
+                <div class="box orange">06</div>
+            </section>
+
+            <h1>wrap</h1>
+            <section class="wrap">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+                <div class="box red">04</div>
+                <div class="box brown">05</div>
+                <div class="box orange">06</div>
+            </section>
+
+            <h1>wrap-reverse</h1>
+            <section class="wrapReverse">
+                <div class="box green">01</div>
+                <div class="box violet">02</div>
+                <div class="box blue">03</div>
+                <div class="box red">04</div>
+                <div class="box brown">05</div>
+                <div class="box orange">06</div>
+            </section>
+        </div>
 
         <!-- 네가 만든 flex 예제 전체 붙여도 됨 -->
     </div>
