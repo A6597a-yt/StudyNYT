@@ -1,3 +1,6 @@
+/* ===============================
+   기본 공통 스타일 (style.css)
+   =============================== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -11,14 +14,19 @@ body {
     display: flex;
     align-items: center;
     padding-left: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .menu-btn {
     font-size: 20px;
     cursor: pointer;
     margin-right: 15px;
+    padding: 10px 14px;       /* 모바일 터치 영역 확대 */
 }
-/* 사이드바도 폭 고정 대비로 */
+
+/* 사이드바 */
 .sidebar {
     height: 100%;
     width: 0;
@@ -30,7 +38,7 @@ body {
     overflow-x: hidden;
     transition: 0.25s;
     padding-top: 60px;
-    z-index: 9999;   /* <<< 이거 추가 */
+    z-index: 9999;
 }
 
 .sidebar a {
@@ -45,6 +53,7 @@ body {
     background: #444;
 }
 
+/* 기본 콘텐츠 영역 */
 .content {
     padding: 20px;
     margin-top: 10px;
@@ -52,19 +61,73 @@ body {
 
 /* 전체 페이지 폭 고정 (모바일 기준) */
 .page-wrapper {
-    max-width: 420px;   /* 모바일 세로 기준 */
+    max-width: 420px;
     width: 100%;
     margin: 0 auto;
     background: #fff;
     min-height: 100vh;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 보기 좋게 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     position: relative;
-    z-index: 1;   /* page-wrapper를 아래로 내림 */
+    z-index: 1;
     display: flex;
     flex-direction: column;
 }
 
+/* ===============================
+   chapter1_1 전용 반응형 최적화
+   =============================== */
 
+/* 제목 */
+.content h2 {
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 16px;
+    font-weight: 700;
+}
 
+/* 문단 */
+.content p {
+    line-height: 1.55;
+    font-size: clamp(14px, 3.8vw, 17px);
+    margin: 8px 0;
+}
 
+/* 태그 예시 줄맞춤 */
+.content p span {
+    display: block;
+    margin-top: 4px;
+}
 
+/* 콘텐츠 패딩 강화(모바일 터치 고려) */
+.content {
+    padding: 16px 18px;
+}
+
+/* 이미지 반응형 */
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 6px 0 12px;
+}
+
+/* 목록 스타일 */
+.content ul,
+.content ol {
+    padding-left: 22px;
+    margin: 10px 0;
+}
+
+.content li {
+    font-size: clamp(14px, 3.7vw, 17px);
+    margin-bottom: 4px;
+}
+
+/* page-wrapper 보정 */
+.page-wrapper {
+    max-width: 430px;   /* chapter1_1 기준으로 더 넓게 */
+}
+
+/* body 배경 수정 (chapter1_1 기준) */
+body {
+    background: #e5e5e5;
+}
