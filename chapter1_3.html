@@ -9,8 +9,8 @@
     <style>
         .fixed-box {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            bottom: 10vw;
+            right: 30vw;
             background: tomato;
             color: white;
             padding: 10px;
@@ -24,6 +24,9 @@
             color: black;
             padding: 10px;
             font-weight: bold;
+        }
+        .page-wrapper {
+            overflow: visible; /* sticky 유지 */
         }
     </style>
 </head>
@@ -62,7 +65,7 @@
             <p>fixed : 위치 고정</p>
             <p>sticky : 스크롤해도 따라옴</p>
             <div class="fixed-box">FIXED (항상 고정)</div>
-            <div class="sticky-box">STICKY (여기 올 때 고정)</div>
+            <div class="sticky-box">STICKY (스크롤을 만나면 고정)</div>
 
             <div class="transformbox">
                 <div class="transform">중앙 배치</div>
