@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="display_position.css">
     <title>5장 - Flex 정렬</title>
 </head>
 <body>
@@ -18,12 +19,176 @@
 
     <div class="content">
         <h2>5장 — Flex 정렬 속성</h2>
-
         <p>justify-content</p>
         <p>align-items</p>
         <p>align-content</p>
 
-        <!-- 너가 만든 정렬 예제 전체 붙여도 됨 -->
+        <div class="justify-content">
+
+            <h1>justify-content</h1>
+            가로의 배치만 신경쓸때(세로는 고려하지 않는다.)
+            <h2>flex-start</h2>
+            <section class="flex-start">
+                <div class="box a">A</div>
+                <div class="box b">B</div>
+                <div class="box c">C</div>
+                <div class="box d">D</div>
+                <div class="box e">E</div>
+            </section>
+            
+
+            <h2>center</h2>
+            <section class="center">
+                <div class="box a">A</div>
+                <div class="box b">B</div>
+                <div class="box c">C</div>
+                <div class="box d">D</div>
+                <div class="box e">E</div>
+            </section>
+
+            <h2>flex-end</h2>
+            <section class="flex-end">
+                <div class="box a">A</div>
+                <div class="box b">B</div>
+                <div class="box c">C</div>
+                <div class="box d">D</div>
+                <div class="box e">E</div>
+            </section>
+
+            <h2>space-between</h2>
+            <section class="space-between">
+                <div class="box a">A</div>
+                <div class="box b">B</div>
+                <div class="box c">C</div>
+                <div class="box d">D</div>
+                <div class="box e">E</div>
+            </section>
+
+            <h2>space-around</h2>
+            <section class="space-around">
+                <div class="box a">A</div>
+                <div class="box b">B</div>
+                <div class="box c">C</div>
+                <div class="box d">D</div>
+                <div class="box e">E</div>
+            </section>
+        </div>
+    <!-- 정렬 2 코드 ============================ -->
+        <div class="align-content">
+            <h1>align-content</h1>
+        <p class="desc">
+            여러 줄이 된 flex 아이템들의 “줄 덩어리”를 부모 박스 안에서 세로 방향으로 어떻게 배치할지 정하는 속성이다<br/>
+            (= flex-wrap으로 줄바꿈이 일어날 때만 차이가 보임)<br>
+            한줄일때는 align-items / 두줄 이상일때는 align-content
+        </p>
+
+        <h2>stretch (기본값처럼 공간을 쭉 늘려 차지)</h2>
+        <section class="flex-demo ac-stretch">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+
+        <h2>flex-start (윗쪽으로 몰림)</h2>
+        <section class="flex-demo ac-flex-start">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+
+        <h2>center (가운데로 몰림)</h2>
+        <section class="flex-demo ac-center">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+
+        <h2>flex-end (아래쪽으로 몰림)</h2>
+        <section class="flex-demo ac-flex-end">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+
+        <h2>space-between (맨 위/맨 아래 고정, 나머지는 균등하게 벌어짐)</h2>
+        <section class="flex-demo ac-space-between">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+
+        <h2>space-around (각 줄 위아래에 동일한 여백 분배)</h2>
+        <section class="flex-demo ac-space-around">
+            <div class="item a">A</div>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+        </section>
+        </div>
+    <!-- 정렬 3 코드 ============================ -->
+        <div class="align-items">
+            <h1>align-items</h1>
+        <p class="guide">
+            align-items는 flex 아이템들을 컨테이너의 교차축(기본은 세로축) 방향으로 어떻게 정렬할지 결정한다<br/>
+            글자 크기가 다를 때 / 아이템 높이가 다를 때 차이를 관찰하면 이해가 쉽다
+        </p>
+
+        <h2>stretch (가능한 높이 전체를 늘림)</h2>
+        <section class="flex-demo ai-stretch">
+            <div class="item a">a</div>
+            <div class="item b">b</div>
+            <div class="item c">c</div>
+            <div class="item d">d</div>
+            <div class="item e">e</div>
+        </section>
+
+        <h2>flex-start (위쪽 정렬)</h2>
+        <section class="flex-demo ai-flex-start">
+            <div class="item a">a</div>
+            <div class="item b">b</div>
+            <div class="item c">c</div>
+            <div class="item d">d</div>
+            <div class="item e">e</div>
+        </section>
+
+        <h2>center (세로 가운데 정렬)</h2>
+        <section class="flex-demo ai-center">
+            <div class="item a">a</div>
+            <div class="item b">b</div>
+            <div class="item c">c</div>
+            <div class="item d">d</div>
+            <div class="item e">e</div>
+        </section>
+
+        <h2>flex-end (아래쪽 정렬)</h2>
+        <section class="flex-demo ai-flex-end">
+            <div class="item a">a</div>
+            <div class="item b">b</div>
+            <div class="item c">c</div>
+            <div class="item d">d</div>
+            <div class="item e">e</div>
+        </section>
+
+        <h2>baseline (문자의 밑줄선 기준으로 정렬)</h2>
+        <section class="flex-demo ai-baseline">
+            <div class="item a">a</div>
+            <div class="item b">b</div>
+            <div class="item c">c</div>
+            <div class="item d">d</div>
+            <div class="item e">e</div>
+        </section>
+        </div>
     </div>
 </div>
 
