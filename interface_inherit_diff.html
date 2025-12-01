@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="display_position.css">
+    <title>인터페이스 vs 상속</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 40px;
+        }
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .box {
+            background: white;
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #eaf3ff;
+            font-weight: bold;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .arrow-dashed {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #777;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="topbar">
+            <span class="menu-btn" onclick="openNav()">☰</span>
+        </div>
+
+        <div id="sidebar" class="sidebar"></div>
+
+        <div class="content">
+
+            <h1 style="text-align:center;">인터페이스 vs 상속 구조</h1>
+
+            <div class="col">
+
+                <!-- 상속 -->
+                <div class="box">
+                    <h2>상속 (extends)</h2>
+
+                    <div class="item" style="border-color:#e26a4a;background:#ffecea;">
+                        Parent Class<br>(부모 클래스)
+                    </div>
+
+                    <div class="arrow">⬆</div>
+
+                    <div class="item" style="border-color:#e26a4a;background:#ffecea;">
+                        Child Class<br>(자식 클래스)
+                    </div>
+
+                    <p class="note">
+                        • 부모의 구현(코드)을 그대로 물려받음<br>
+                        • 재사용 목적<br>
+                        • 단일 상속만 가능
+                    </p>
+                </div>
+
+                <!-- 인터페이스 -->
+                <div class="box">
+                    <h2>인터페이스 (implements)</h2>
+
+                    <div class="item" style="border-color:#4aaE62;background:#eafff0;">
+                        Interface A
+                    </div>
+
+                    <div class="item" style="border-color:#4aaE62;background:#eafff0;">
+                        Interface B (optional)
+                    </div>
+
+                    <div class="arrow-dashed">⬆  ⬆</div>
+
+                    <div class="item" style="border-color:#4aaE62;background:#eafff0;">
+                        Implementing Class<br>(구현 클래스)
+                    </div>
+
+                    <p class="note">
+                        • 규칙(메서드 형태)만 제공<br>
+                        • 구현은 직접 작성<br>
+                        • 다중 구현 가능
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</div>
+</body>
+</html>

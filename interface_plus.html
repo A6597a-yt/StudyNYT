@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="display_position.css">
+    <title>인터페이스 확장성</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+        h1 { text-align: center; margin-bottom: 30px; }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .item {
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+            border: 2px solid #4a90e2;
+            background: #e7f2ff;
+        }
+
+        .arrow { font-size: 30px; margin: 10px 0; }
+
+        .add {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .new {
+            background: #eaffea;
+            border-color: #4ac26e;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="topbar">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+    </div>
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+
+        <h1>인터페이스 사용 시 <br>
+            기능 추가가 쉬운 이유</h1>
+
+        <div class="col">
+            
+            <!-- 상속 구조(확장 어려움) -->
+            <div class="box">
+                <h2>상속 구조</h2>
+
+                <div class="item" style="background:#fff3f0;border-color:#d66d6d;">
+                    BasePayment<br>(부모 클래스)
+                </div>
+
+                <div class="arrow">⬇</div>
+
+                <div class="item">KakaoPay</div>
+
+                <p class="add">ApplePay 추가하려면?</p>
+
+                <div class="item" style="background:#ffeaea;border-color:#d66d6d;">
+                    BasePayment 수정 필요<br>(코드 영향 발생)
+                </div>
+
+                <p class="add">
+                    ※ 상속 기반은 부모가 강하게 묶여 있어서<br>
+                    새로운 기능을 만들 때 기존 구조에 영향이 생김
+                </p>
+            </div>
+
+            <!-- 인터페이스 구조 -->
+            <div class="box">
+                <h2>인터페이스 구조</h2>
+
+                <div class="item" style="background:#f0fcff;border-color:#00a3c4;">
+                    PaymentService<br>(인터페이스)
+                </div>
+
+                <div class="arrow">⬇</div>
+
+                <div class="item">KakaoPayService</div>
+                <div class="item">NaverPayService</div>
+
+                <div class="add">여기에 새로운 결제수단 추가? ↓</div>
+
+                <div class="item new">ApplePayService (새 구현 추가)</div>
+                <div class="item new">PaycoService (새 구현 추가)</div>
+
+                <p class="add">
+                    ※ 기존 코드 수정 없음<br>
+                    Controller/Service는 PaymentService만 바라보기 때문에<br>
+                    “구현 클래스만 추가하면 바로 확장”
+                </p>
+            </div>
+
+            
+
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
