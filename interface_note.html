@@ -13,10 +13,17 @@
         padding: 40px;
         line-height: 1.6;
     }
+    .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
     .note {
+        flex: 1;
         background: white;
         padding: 30px;
-        border-radius: 12px;
         max-width: 900px;
         margin: auto;
         box-shadow: 0 0 15px rgba(0,0,0,0.12);
@@ -49,6 +56,45 @@
         line-height: 1.4;
         white-space: pre;
     }
+    /* ===============================
+   인터페이스 요약 노트 전용 반응형
+   =============================== */
+    @media (max-width: 600px) {
+
+        .note {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: 20px !important;
+            margin: 0 !important;
+            box-sizing: border-box;
+        }
+
+        .col {
+            gap: 28px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .diagram {
+            white-space: normal !important;
+            font-size: 14px;
+            word-break: keep-all;
+        }
+
+        .box {
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -59,58 +105,60 @@
 
     <div id="sidebar" class="sidebar"></div>
 
-    
-        <div class="note">
+        <div class="coaaal">
+            <div class="note">
 
-        <h1>인터페이스 요약 노트</h1>
+                <h1>인터페이스 요약 노트</h1>
 
-        <h2>1. 인터페이스 기본 의미</h2>
-        <div class="box">
-            • 규칙(메서드 형태)만 정의, 구현은 하지 않음<br>
-            • 구현 클래스는 반드시 <b>public</b>으로 구현해야 함<br>
-            • 오버라이딩 시 접근 제어자가 좁아지면 오류
+                <h2>1. 인터페이스 기본 의미</h2>
+                <div class="box">
+                    • 규칙(메서드 형태)만 정의, 구현은 하지 않음<br>
+                    • 구현 클래스는 반드시 <b>public</b>으로 구현해야 함<br>
+                    • 오버라이딩 시 접근 제어자가 좁아지면 오류
+                </div>
+
+                <h2>2. 인터페이스의 역할</h2>
+                <div class="box">
+                    • 여러 클래스의 규칙 통일<br>
+                    • 다형성 제공 (상위 타입 역할)<br>
+                    • <b>다중 상속 가능</b> → 클래스 상속의 한계 보완
+                </div>
+
+                <h2>3. 인터페이스 → 추상 클래스 → 구현 클래스 구조</h2>
+
+                <div class="diagram">
+                [ Interface ]        : 규칙 제공<br>
+                    ↓<br>
+                [ Abstract Class ]   : 공통 코드 묶기 (선택)<br>
+                    ↓<br>
+                [ Class ]            : 실제 기능 구현
+                </div>
+
+                <div class="box">
+                    • 추상 클래스는 필요할 때만 사용<br>
+                    • 인터페이스는 항상 가장 상단의 <b>역할</b>을 담당
+                </div>
+
+                <h2>4. default / static 메서드</h2>
+                <div class="box">
+                    • <b>default</b>: 인터페이스에 기본 구현 제공 (예외적 기능)<br>
+                    • <b>static</b>: 인터페이스 이름으로 호출하는 정적 메서드<br>
+                </div>
+
+                <h2>5. 핵심 요약 (암기판)</h2>
+                <div class="box">
+                    ■ 인터페이스 = 규칙만<br>
+                    ■ 추상 클래스 = 공통 코드 + 규칙 일부<br>
+                    ■ 구현 클래스 = 실제 동작<br><br>
+
+                    인터페이스 → 공통 규칙<br>
+                    추상 클래스 → 공통 구현<br>
+                    클래스 → 실제 기능
+                </div>
+
+            </div>
         </div>
 
-        <h2>2. 인터페이스의 역할</h2>
-        <div class="box">
-            • 여러 클래스의 규칙 통일<br>
-            • 다형성 제공 (상위 타입 역할)<br>
-            • <b>다중 상속 가능</b> → 클래스 상속의 한계 보완
-        </div>
-
-        <h2>3. 인터페이스 → 추상 클래스 → 구현 클래스 구조</h2>
-
-        <div class="diagram">
-        [ Interface ]        : 규칙 제공<br>
-            ↓<br>
-        [ Abstract Class ]   : 공통 코드 묶기 (선택)<br>
-            ↓<br>
-        [ Class ]            : 실제 기능 구현
-        </div>
-
-        <div class="box">
-            • 추상 클래스는 필요할 때만 사용<br>
-            • 인터페이스는 항상 가장 상단의 <b>역할</b>을 담당
-        </div>
-
-        <h2>4. default / static 메서드</h2>
-        <div class="box">
-            • <b>default</b>: 인터페이스에 기본 구현 제공 (예외적 기능)<br>
-            • <b>static</b>: 인터페이스 이름으로 호출하는 정적 메서드<br>
-        </div>
-
-        <h2>5. 핵심 요약 (암기판)</h2>
-        <div class="box">
-            ■ 인터페이스 = 규칙만<br>
-            ■ 추상 클래스 = 공통 코드 + 규칙 일부<br>
-            ■ 구현 클래스 = 실제 동작<br><br>
-
-            인터페이스 → 공통 규칙<br>
-            추상 클래스 → 공통 구현<br>
-            클래스 → 실제 기능
-        </div>
-
-        </div>
 </div> 
 <script src="script.js"></script>
 </body>
