@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="display_position.css">
     <title>인터페이스 vs 상속</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            padding: 40px;
-        }
         .col {
             display: flex;
             flex-direction: column;
@@ -24,8 +19,9 @@
             flex: 1;
             padding: 20px;
             border-radius: 10px;
-            width: 350px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;   /* ← 350px 삭제하고 100%로 */
+            max-width: 350px; /* 필요하면 최대 350px 제한 */
         }
 
         h2 {
